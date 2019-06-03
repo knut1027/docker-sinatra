@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    tty: true
+    container_name: sample
+    build: .
+    command: bundle exec ruby myapp.rb -o 0.0.0.0
+    volumes:
+      - .:/usr/local/src
+    ports:
+      - "80:4567"
+      - "4567:4567"
